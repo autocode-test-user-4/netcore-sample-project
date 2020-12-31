@@ -26,7 +26,6 @@ namespace FancyCalc
         }
 
         [TestCase(3, 3, ExpectedResult = 9)]
-        [TestCase(1, 0, ExpectedResult = 0)]
         public double MultiplyTest(int a, int b)
         {
             var calc = new FancyCalcEnguine();
