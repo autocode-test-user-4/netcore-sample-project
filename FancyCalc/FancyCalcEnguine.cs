@@ -25,13 +25,5 @@ namespace FancyCalc
              throw new NotImplementedException();
             
         }
-
-        //generic calc method. usage: "10 + 20"  => result 30
-        public double Culculate(string expression)
-        {
-            throw new NotImplementedException();
-           // return 6;
-
-        }
     }
 }
