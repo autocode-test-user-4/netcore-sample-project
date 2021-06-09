@@ -1,29 +1,36 @@
 using System;
+using NUnit.Framework;
 
 namespace FancyCalc
 {
-    public class FancyCalcEnguine
+    [TestFixture]
+    public class FancyCalculatorTests
     {
 
-        public double Add(int a, int b)
+        [Test]
+        public void AddTest()
         {
-            throw new NotImplementedException();
-            //return a + b;
+            FancyCalcEnguine calc = new FancyCalcEnguine();
+            double expected = 4;
+            double actual = calc.Add(2, 2);
+            Assert.AreEqual(expected, actual);
         }
 
-
-        public double Subtract(int a, int b)
+        [Test]
+        public void SubtractTest()
         {
-            throw new NotImplementedException();
-           // return a - b;
+            var calc = new FancyCalcEnguine();
+            double expected = 0;
+            double actual = calc.Subtract(1, 1);
+            Assert.AreEqual(expected, actual);
         }
 
-
-        public double Multiply(int a, int b)
+        [TestCase(3, 3, ExpectedResult = 9)]
+        [TestCase(1, 0, ExpectedResult = 0)]
+        public double MultiplyTest(int a, int b)
         {
-            //return a * b;
-             throw new NotImplementedException();
-            
+            var calc = new FancyCalcEnguine();
+            return calc.Multiply(a, b);
         }
     }
 }
